@@ -1,0 +1,105 @@
+:root {
+  --primary: #d4d4d4;
+  --secondary: #1DD1B1;
+  --background: #242424;
+}
+
+body {
+  font-family:sans-serif;
+  display: grid;
+  place-content: center;
+  padding: 2rem;
+  color: var(--primary);
+  background: var(--background);
+}
+
+/* Core styles/functionality */
+.tab input {
+  position: absolute;
+  z-index: -1;
+}
+
+.tab__content {
+  max-height: 0;
+  padding-right:2rem;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.tab input:checked ~ .tab__content {
+  max-height: 10rem;
+}
+
+/* Visual styles */
+.accordion {
+  color: var(--primary);
+  padding: 2rem;
+  border: 0.5px solid var(--primary);
+  border-radius: 4px;
+}
+.tab__label,
+.tab__close {
+  display: flex;
+  color: var(--primary);
+  background: var(--background);
+  cursor: pointer;
+
+}
+.tab__label {
+  align-items: center;
+  padding: 0.5rem;
+}
+.tab__label::before {
+  content: "\276F";
+  width: 1.5em;
+  height: 1.5em;
+  transition: all 0.5s;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  margin-right: 0.5rem;
+}
+.tab input:checked + .tab__label::before {
+  transform: rotate(90deg);
+}
+
+li {
+  margin-left: 2rem;
+  margin-bottom:0.5rem;
+  list-style-type: "";
+  display:flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+img {
+  padding-right: 1rem;
+}
+
+hr {
+  border-top: 0.5px solid var(--primary);
+  border-bottom:none;
+  border-radius: 0.3px;
+}
+
+/* Arrow animation */
+.tab__label:hover::before {
+  border: 0.5px solid var(--secondary);
+  border-radius: 0.75rem;
+  color: var(--primary);
+  }
+
+.tab__label:active::before {
+  transition-duration: 0s;
+  border-radius: 0.75rem;
+  background: var(--primary);
+  color: var(--background);
+}
+
+/* Text animation */
+li:hover {
+  color: var(--secondary);
+}
+
+.tab__label:hover {
+  color: var(--secondary);
+}
