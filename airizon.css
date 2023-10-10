@@ -49,7 +49,7 @@ body {
   padding: 0.5rem;
 }
 .tab__label::before {
-  content: "\276F";
+  content: "\02C3";
   width: 1.5em;
   height: 1.5em;
   transition: all 0.5s;
@@ -60,6 +60,7 @@ body {
 }
 .tab input:checked + .tab__label::before {
   transform: rotate(90deg);
+  color: var(--secondary);
 }
 
 li {
@@ -102,4 +103,8 @@ li:hover {
 
 .tab__label:hover {
   color: var(--secondary);
+}
+
+li:active {
+  text-decoration: underline;
 }
