@@ -40,13 +40,13 @@ body {
 .accordion .tab:not(:last-child) {
   border-bottom: 1px solid var(--primary);
 }
+
 .tab__label,
 .tab__close {
   display: flex;
   color: var(--primary);
   background: var(--background);
   cursor: pointer;
-
 }
 
 .tab__label {
@@ -65,7 +65,6 @@ body {
   margin-right: 0.5rem;
   border: 0.5px solid var(--background);
   border-radius: 0.75rem;
-
 }
 
 .tab input:checked + .tab__label::before {
@@ -75,7 +74,7 @@ body {
 }
 
 li {
-  margin-left: 2rem;
+  margin-left: 1rem;
   margin-bottom:0.5rem;
   list-style-type: "";
   display:flex;
