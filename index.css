@@ -39,6 +39,7 @@ body {
 
 .accordion .tab:not(:last-child) {
   border-bottom: 1px solid var(--primary);
+  padding-bottom:0.5rem;
 }
 
 .tab__label,
@@ -51,7 +52,6 @@ body {
 
 .tab__label {
   align-items: center;
-
   padding-left: 0.5rem;
   padding-top: 0.5rem;
 }
