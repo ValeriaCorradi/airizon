@@ -61,6 +61,7 @@ body {
 .tab input:checked + .tab__label::before {
   transform: rotate(90deg);
   color: var(--secondary);
+  border-color: var(--primary);
 }
 
 li {
