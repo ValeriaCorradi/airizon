@@ -48,10 +48,12 @@ body {
   cursor: pointer;
 
 }
+
 .tab__label {
   align-items: center;
   padding: 0.5rem;
 }
+
 .tab__label::before {
   content: "\02C3";
   width: 1.5em;
@@ -61,11 +63,15 @@ body {
   align-items: center;
   justify-content:center;
   margin-right: 0.5rem;
+  border: 0.5px solid var(--background);
+  border-radius: 0.75rem;
+
 }
+
 .tab input:checked + .tab__label::before {
   transform: rotate(90deg);
   color: var(--secondary);
-  border-color: var(--primary);
+  border: 0.5px solid var(--background);
 }
 
 li {
@@ -84,15 +90,17 @@ img {
 /* Arrow animation */
 .tab__label:hover::before {
   border: 0.5px solid var(--secondary);
-  border-radius: 0.75rem;
   color: var(--primary);
   }
 
 .tab__label:active::before {
   transition-duration: 0s;
-  border-radius: 0.75rem;
   background: var(--primary);
   color: var(--background);
+}
+
+.tab input:checked + .tab__label:hover::before {
+  border-color: var(--primary);
 }
 
 /* Text animation */
