@@ -36,6 +36,10 @@ body {
   border: 0.5px solid var(--primary);
   border-radius: 4px;
 }
+
+.accordion .tab:not(:last-child) {
+  border-bottom: 1px solid var(--primary);
+}
 .tab__label,
 .tab__close {
   display: flex;
@@ -75,12 +79,6 @@ li {
 
 img {
   padding-right: 1rem;
-}
-
-hr {
-  border-top: 0.5px solid var(--primary);
-  border-bottom:none;
-  border-radius: 0.3px;
 }
 
 /* Arrow animation */
