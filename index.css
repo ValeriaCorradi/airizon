@@ -1,11 +1,12 @@
+/* Global styles */
 :root {
   --primary: #d4d4d4;
-  --secondary: #1DD1B1;
+  --secondary: #1dd1b1;
   --background: #242424;
 }
 
 body {
-  font-family:sans-serif;
+  font-family: sans-serif;
   display: grid;
   place-content: center;
   padding: 2rem;
@@ -16,21 +17,23 @@ body {
 /* Core styles/functionality */
 .tab input {
   position: absolute;
-  z-index: -1;
+  visibility: hidden;
 }
 
 .tab__content {
-  max-height: 0;
-  padding-right:2rem;
+  max-height: 0; /* default state is collapsed */
+  padding-right: 2rem;
   overflow: hidden;
   transition: all 0.5s;
 }
+
 .tab input:checked ~ .tab__content {
-  max-height: 10rem;
+  max-height: 10rem; /* once opened */
 }
 
 /* Visual styles */
 .accordion {
+  user-select: none;
   color: var(--primary);
   padding: 2rem;
   border: 0.5px solid var(--primary);
@@ -39,7 +42,7 @@ body {
 
 .accordion .tab:not(:last-child) {
   border-bottom: 1px solid var(--primary);
-  padding-bottom:0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .tab__label,
@@ -58,15 +61,16 @@ body {
 
 .tab__label::before {
   content: "\02C3";
-  width: 1.5em;
-  height: 1.5em;
+  font-size: 24px;
+  line-height: 34px;
+  width: 24px;
+  height: 24px;
   transition: all 0.5s;
-  display:flex;
-  align-items: center;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
   margin-right: 0.5rem;
   border: 0.5px solid var(--background);
-  border-radius: 0.75rem;
+  border-radius: 1rem;
 }
 
 .tab input:checked + .tab__label::before {
@@ -77,14 +81,14 @@ body {
 
 li {
   margin-left: 1rem;
-  margin-bottom:0.5rem;
+  margin-bottom: 0.5rem;
   list-style-type: "";
-  display:flex;
+  display: flex;
   align-items: center;
   cursor: pointer;
 }
 
-img {
+.accordion img {
   padding-right: 1rem;
 }
 
@@ -92,7 +96,7 @@ img {
 .tab__label:hover::before {
   border: 0.5px solid var(--secondary);
   color: var(--primary);
-  }
+}
 
 .tab__label:active::before {
   transition-duration: 0s;
